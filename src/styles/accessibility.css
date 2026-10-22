@@ -1,0 +1,111 @@
+.skip-link {
+  position: fixed;
+  z-index: 200;
+  top: var(--space-3);
+  left: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  color: var(--color-surface);
+  background: var(--color-navy-900);
+  box-shadow: var(--shadow-md);
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+  transform: translateY(calc(-100% - var(--space-6)));
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.shell-content:focus,
+.app-error-page:focus,
+.route-loading-page:focus {
+  outline: none;
+}
+
+.route-loading-page,
+.app-error-page {
+  display: grid;
+  min-height: 100vh;
+  padding: var(--space-6);
+  place-items: center;
+  background: var(--color-background);
+}
+
+.page-state {
+  display: grid;
+  width: min(100%, 620px);
+  min-height: 280px;
+  place-items: center;
+  align-content: center;
+  padding: var(--space-8);
+  border: 1px dashed var(--color-neutral-300);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.page-state__icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border-radius: var(--radius-md);
+  color: var(--color-primary-700);
+  background: var(--color-primary-50);
+}
+
+.page-state--loading .page-state__icon svg {
+  animation: page-state-spin 900ms linear infinite;
+}
+
+.page-state--error .page-state__icon {
+  color: var(--color-critical);
+  background: var(--color-critical-surface);
+}
+
+.page-state h2 {
+  margin: var(--space-4) 0 var(--space-2);
+  color: var(--color-navy-900);
+  font-size: var(--font-size-xl);
+}
+
+.page-state p {
+  max-width: 480px;
+  margin-bottom: 0;
+  color: var(--color-neutral-500);
+  line-height: 1.7;
+}
+
+.page-state__action {
+  margin-top: var(--space-5);
+}
+
+@keyframes page-state-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 560px) {
+  .route-loading-page,
+  .app-error-page {
+    padding: var(--space-4);
+  }
+
+  .page-state {
+    min-height: 240px;
+    padding: var(--space-6);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

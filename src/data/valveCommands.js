@@ -1,0 +1,53 @@
+const now = Date.now()
+const HOUR_IN_MS = 60 * 60 * 1000
+
+export const valveCommands = [
+  {
+    id: 'valve-command-001',
+    deviceId: 'device-365-001',
+    command: 'CLOSE',
+    source: 'AUTOMATION',
+    status: 'SUCCESS',
+    requestedBy: 'SYSTEM',
+    reason: 'ตรวจพบเหตุการณ์น้ำรั่วจาก Sensor จำลอง',
+    createdAt: new Date(now - 20 * HOUR_IN_MS).toISOString(),
+    completedAt: new Date(now - 20 * HOUR_IN_MS + 4 * 1000).toISOString(),
+    isMock: true,
+  },
+  {
+    id: 'valve-command-002',
+    deviceId: 'device-365-001',
+    command: 'OPEN',
+    source: 'USER',
+    status: 'SUCCESS',
+    requestedBy: 'admin-001',
+    reason: 'เปิดวาล์วหลังแก้ไขเหตุการณ์และยืนยันความปลอดภัยแล้ว',
+    createdAt: new Date(now - 17.8 * HOUR_IN_MS).toISOString(),
+    completedAt: new Date(now - 17.8 * HOUR_IN_MS + 3 * 1000).toISOString(),
+    isMock: true,
+  },
+  {
+    id: 'valve-command-003',
+    deviceId: 'device-365p-001',
+    command: 'OPEN',
+    source: 'USER',
+    status: 'SUCCESS',
+    requestedBy: 'user-365p-001',
+    reason: 'คำสั่งเปิดวาล์วสำหรับการสาธิต',
+    createdAt: new Date(now - 3 * HOUR_IN_MS).toISOString(),
+    completedAt: new Date(now - 3 * HOUR_IN_MS + 3 * 1000).toISOString(),
+    isMock: true,
+  },
+  {
+    id: 'valve-command-004',
+    deviceId: 'device-365p-002',
+    command: 'CLOSE',
+    source: 'USER',
+    status: 'SUCCESS',
+    requestedBy: 'admin-001',
+    reason: 'ปิดวาล์วเครื่องสำรองสำหรับการสาธิต',
+    createdAt: new Date(now - 2 * 24 * HOUR_IN_MS).toISOString(),
+    completedAt: new Date(now - 2 * 24 * HOUR_IN_MS + 3 * 1000).toISOString(),
+    isMock: true,
+  },
+]

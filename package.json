@@ -1,0 +1,33 @@
+{
+  "name": "frizzlife-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "validate:phase2": "node scripts/validatePhase2.mjs",
+    "validate:phase4": "node scripts/validatePhase4.mjs",
+    "validate:phase5": "node scripts/validatePhase5.mjs",
+    "validate:phase6": "node scripts/validatePhase6.mjs",
+    "validate:phase7": "node scripts/validatePhase7.mjs",
+    "validate:phase8": "node scripts/validatePhase8.mjs",
+    "validate:phase9": "node scripts/validatePhase9.mjs",
+    "validate:phase10": "node scripts/validatePhase10.mjs",
+    "validate:phase10.5": "node scripts/validatePhase105.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "^1.61.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.4",
+    "recharts": "^3.10.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.88.0",
+    "vite": "^8.3.4"
+  }
+}
